@@ -1,0 +1,192 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "back_ground1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "bg_game.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "back_ground2",
+            "Y": -320,
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "bg_game.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "red1",
+            "X": 103,
+            "Y": 12,
+            "Width": 35,
+            "Height": 73,
+            "RelativeFilename": "car_red.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "green",
+            "X": 56,
+            "Y": 160,
+            "Width": 35,
+            "Height": 73,
+            "RelativeFilename": "car_green.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "red3",
+            "X": 152,
+            "Y": -111,
+            "Width": 35,
+            "Height": 73,
+            "RelativeFilename": "car_red.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Image",
+            "Name": "red2",
+            "X": 56,
+            "Y": -95,
+            "Width": 35,
+            "Height": 73,
+            "RelativeFilename": "car_red.png",
+            "Moveable": true
+          },
+          {
+            "Type": "Button",
+            "Name": "button1",
+            "X": 31,
+            "Y": 243,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Style": "Style5",
+            "Clickable": true
+          },
+          {
+            "Type": "Button",
+            "Name": "button2",
+            "X": 157,
+            "Y": 243,
+            "Width": 60,
+            "Height": 60,
+            "Pressed": "__designer\\Blue_Buttons_Round_icon_button_pressed.png",
+            "Released": "__designer\\Blue_Buttons_Round_icon_button.png",
+            "Style": "Style5"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "moveLeft",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button1"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "ActionComponent": "green"
+            }
+          },
+          {
+            "InteractionName": "moveRight",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button2"
+            },
+            "Action": {
+              "Type": "ActionMove",
+              "X": 100,
+              "Y": 200,
+              "Easing": "Linear",
+              "EasingOption": "In",
+              "ActionComponent": "green"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "CustomContainer1",
+        "Width": 240,
+        "Height": 320,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "Width": 240,
+            "Height": 320,
+            "RelativeFilename": "bg_game.png",
+            "Moveable": true
+          }
+        ],
+        "Interactions": [],
+        "CustomTriggers": [
+          {
+            "Name": "trigger1"
+          }
+        ]
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../STM32F429I-DISCO.ioc --platform=m4",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait"
+  },
+  "Version": "4.19.1",
+  "CreatedBy": "4.19.1"
+}
